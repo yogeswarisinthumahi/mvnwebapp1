@@ -28,12 +28,12 @@ jobs:
     name: snyk_scan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: Run Snyk to check for vulnerabilities
         id: env
         run:
           echo "Hello1"
-          echo "Hello2"
-        #uses: snyk/actions/maven@master
+          #echo "Hello2"
+        uses: snyk/actions/maven@v2
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
