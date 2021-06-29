@@ -1,4 +1,4 @@
-#abcd
+#abc
 name: Example workflow for Maven using Snyk
 on: push
 jobs:
