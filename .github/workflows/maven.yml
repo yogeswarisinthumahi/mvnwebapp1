@@ -27,6 +27,7 @@ jobs:
 #name: Example workflow for Maven using Snyk
 #on: push
 #jobs:
+#SNYK
   security:
     runs-on: ubuntu-latest
     steps:
