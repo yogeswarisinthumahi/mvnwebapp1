@@ -6,14 +6,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: snyk/actions/setup@master
-   # - uses: actions/setup-go@v1
-    #  with:
-    #    go-version: "1.13"
-    - name: Snyk test
-#echo "testacc"
-      env:
-        #SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        SNYK_TOKEN: da433f8e-a592-4c2d-85ea-1a1deda09a63
+    - uses: actions/setup-go@v1
       with:
-       command: monitor  
-# run: snyk test --all-projects
+        go-version: "1.13"
+    - name: Snyk test
+      run: snyk test --all-projects
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
