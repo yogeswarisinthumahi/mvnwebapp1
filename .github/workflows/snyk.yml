@@ -9,12 +9,12 @@ jobs:
     #- uses: actions/setup-go@v1
      # with:
       #  go-version: "1.13"
-      env:
-        SNYK_TOKEN: da433f8e-a592-4c2d-85ea-1a1deda09a63
-    #- name: Snyk monitor
+          #- name: Snyk monitor
       #run: snyk monitor
     - name: Snyk test
       run: snyk test 
+      env:
+        SNYK_TOKEN: da433f8e-a592-4c2d-85ea-1a1deda09a63
       #--all-projects
       
         #SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
