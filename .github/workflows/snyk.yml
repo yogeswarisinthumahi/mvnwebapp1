@@ -14,7 +14,7 @@ jobs:
     - name: Snyk test
       run: snyk test 
       env:
-        SNYK_TOKEN: da433f8e-a592-4c2d-85ea-1a1deda09a63
+        SNYK_TOKEN: '6ca4ef19-e168-4dba-b0a5-6b06e297c7233'
       #--all-projects
       #sfdsf
         #SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
