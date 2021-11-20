@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+ - uses: actions/setup-java@v1 # Make java accessible on path so the uploadandscan action can run.
+  with: 
+    java-version: '8'
+- uses: actions/upload-artifact@v2 # Copy files from repository to docker container so the next uploadandscan action can access them.
+  with:
+    path: folder_to_upload/*.jar # Wildcards can be used to filter the files copied into the container. See: https://github.com/actions/upload-artifact
+- uses: veracode/veracode-uploadandscan-action@master # Run the uploadandscan action. Inputs are described above.
+  with:
+    filepath: 'folder_to_upload/'
+    vid: df8fb1b2d88861fa2e81578f91137e19
+    vkey: 0915b40a8e9475e542893d26a3aa92f2d38f8577fb1c03a751aae6bba0f4763178ee12c073f26fa9612d4f9266c295c8aed17c2bf907a15b329a1a0433b8267a
+    #vid: '${{ secrets.VERACODE_API_ID }}'
+    #vkey: '${{ secrets.VERACODE_API_KEY }}'
+    createsandbox: 'true'
+    sandboxname: 'sandbox_mvnapp'
+    scantimeout: 15
+    exclude: '*.js'
+    include: '*.war'
+    criticality: 'VeryHigh'
