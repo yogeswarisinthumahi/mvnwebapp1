@@ -29,7 +29,7 @@ jobs:
         path: /home/runner/work/mvnwebapp1/mvnwebapp1/target/mvnwebapp.war # Wildcards can be used to filter the files copied into the container. See: https://github.com/actions/upload-artifact
     - uses: veracode/veracode-uploadandscan-action@master # Run the uploadandscan action. Inputs are described above.
       with:
-        filepath: '/home/runner/work/mvnwebapp1/mvnwebapp1/target/'
+        filepath: /home/runner/work/mvnwebapp1/mvnwebapp1/target/
         vid: df8fb1b2d88861fa2e81578f91137e19
         vkey: 0915b40a8e9475e542893d26a3aa92f2d38f8577fb1c03a751aae6bba0f4763178ee12c073f26fa9612d4f9266c295c8aed17c2bf907a15b329a1a0433b8267a
     #vid: '${{ secrets.VERACODE_API_ID }}'
