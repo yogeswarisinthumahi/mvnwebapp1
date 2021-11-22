@@ -14,12 +14,12 @@ jobs:
       env:
         SNYK_TOKEN: da433f8e-a592-4c2d-85ea-1a1deda09a63
         #SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-    - name: Run Snyk to check image for vulnerabilities
-      continue-on-error: true
-      uses: snyk/actions/docker@master
-      env:
-        #SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        SNYK_TOKEN: da433f8e-a592-4c2d-85ea-1a1deda09a63
+#     - name: Run Snyk to check image for vulnerabilities
+#       continue-on-error: true
+#       uses: snyk/actions/docker@master
+#       env:
+#         #SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+#         SNYK_TOKEN: da433f8e-a592-4c2d-85ea-1a1deda09a63
 #       with:
 #         image: your-image
 #         args: --file=Dockerfile
