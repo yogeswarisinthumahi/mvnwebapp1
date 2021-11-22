@@ -24,8 +24,8 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
    
-    - run: cd /home/runner/work/mvnwebapp1/mvnwebapp1/target && ls
-    - run: ls
+   # - run: cd /home/runner/work/mvnwebapp1/mvnwebapp1/target && ls
+   # - run: ls
     - run: mkdir deployment && cp /home/runner/work/mvnwebapp1/mvnwebapp1/target/*.war deployment
     - run: ls
     - uses: actions/upload-artifact@v2 # Copy files from repository to docker container so the next uploadandscan action can access them.
