@@ -25,4 +25,4 @@ steps:
     projectName: 'Dependancycheckwebapp'
     scanPath: '**/*.war'
     format: 'HTML, CSV, JSON'
-    failOnCVSS: '8'
+
