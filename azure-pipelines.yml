@@ -20,11 +20,9 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-    
-- task: SnykSecurityScan@1
+- task: dependency-check-build-task@6
   inputs:
-    serviceConnectionEndpoint: 'snykconnection'
-    testType: 'app'
-    monitorWhen: 'always'
-    failOnIssues: false
-    projectName: 'webapp'
+    projectName: 'Dependancycheckwebapp'
+    scanPath: '**/*.war'
+    format: 'HTML, CSV, JSON'
+    failOnCVSS: '8'
