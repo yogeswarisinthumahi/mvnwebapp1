@@ -1,0 +1,30 @@
+name: demo workflow
+on: [push]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout step
+          uses: actions/checkout@v4.1.1
+
+        - name: print helloworld
+          run: echo hello world
+
+        - name: print hi how r u
+          run: echo hi how are you
+
+        - name: print end of code
+          run: echo *************
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+        - name: running snyk scan
+          uses: snyk/actions@0.4.0
+          env:
+              SNYK_TOKEN: $ {{ secrets.SNYK_TOKEN }}
+
+        - name: print hello
+          run : echo hello
+        
+    
+    
